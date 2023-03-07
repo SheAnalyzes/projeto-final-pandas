@@ -15,3 +15,11 @@
     <li>Criação do gitignore e  adicionando a venv nele</li>
     <li>Salvando as versoes usadas: pip freeze > requirements.txt</li>
 </ol>
+
+#### Criação das funções que fazem a leitura do csv
+
+#### Criar a logica para gerar o relatorio de fraude
+
+#### Crar as tabelas no banco
+
+#### Salvar os dados no banco de dados
