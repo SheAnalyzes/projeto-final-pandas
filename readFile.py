@@ -20,7 +20,6 @@ class ReadFile():
                     lista_de_dfs_clientes.append(df)  # adiciona o DataFrame à lista
         try:
             df_final = pd.concat(lista_de_dfs_clientes, ignore_index=True)  # combina todos os DataFrames em um único DataFrame
-            # print(df_final)
             return df_final
         except ValueError:
             print('Nenhum arquivo CSV encontrado ou todos os arquivos estão vazios')
@@ -58,7 +57,6 @@ class ReadFile():
                     lista_de_dfs_clientes.append(df)  # adiciona o DataFrame à lista
         try:
             df_final = pd.concat(lista_de_dfs_clientes, ignore_index=True)  # combina todos os DataFrames em um único DataFrame
-            # print(df_final)
             return df_final
         except ValueError:
             print('Nenhum arquivo CSV encontrado ou todos os arquivos estão vazios')
