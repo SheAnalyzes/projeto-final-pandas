@@ -12,7 +12,7 @@
 
 <ol>
     <li>Instalação do Pandas: pip install pandas</li>
-    <li>Criação do gitignore e  adicionando a venv nele</li>
+    <li>Criação do gitignore e adicionando a venv nele</li>
     <li>Salvando as versoes usadas: pip freeze > requirements.txt</li>
 </ol>
 
@@ -20,6 +20,14 @@
 
 #### Criar a logica para gerar o relatorio de fraude
 
-#### Crar as tabelas no banco
+#### Criação dos relatórios em csv
+
+#### Criar conexão com banco de dados 
+
+<ol>
+    <li>pip install pyodbc</li>
+    <li>instalção do drive 18: https://learn.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-server?view=sql-server-ver15</li>
+    <li>configurar a conexão com senha e login</li>
+</ol>
 
 #### Salvar os dados no banco de dados
