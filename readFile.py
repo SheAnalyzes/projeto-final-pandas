@@ -16,6 +16,8 @@ class ReadFile():
             df = pd.concat([df, temp_df])
 
         df['data_cadastro'] = pd.to_datetime(df['data_cadastro'])
+        print(df)
+        print("Salvando clients no csv...")
         df.to_csv('./reports/clients.csv', index=False)
         return df
 
@@ -42,6 +44,8 @@ class ReadFile():
             df_out = pd.concat([df_out, temp_df_out])
         
         df = pd.concat([df_in, df_out])
+        print(df)
+        print("Salvando transactions no csv...")
         df.to_csv('./reports/transactions.csv', index=False)
         return df
     

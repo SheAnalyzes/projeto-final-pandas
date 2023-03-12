@@ -1,7 +1,5 @@
 import pandas as pd
 import pyodbc
-# instalção do drive: https://learn.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-server?view=sql-server-ver15
-# Lendo o arquivo CSV usando o método read_csv
 
 class ConnectionDB:
     def __init__(self):
@@ -27,15 +25,23 @@ class ConnectionDB:
             df = pd.read_csv("./reports/clients_fraud.csv")
 
             # Verifica se a tabela já existe        
-            table_check_query = "IF OBJECT_ID('dbo.clients_fraud', 'U') IS NULL CREATE TABLE clients_fraud (id INT IDENTITY(1,1) PRIMARY KEY, cliente_id VARCHAR(100), nome VARCHAR(100), email VARCHAR(200), telefone VARCHAR(20), cliente_id_fraude_counts INT, valor INT);"
+            table_check_query = "IF OBJECT_ID('dbo.clients_fraud', 'U') IS NULL CREATE TABLE clients_fraud (cliente_id INT PRIMARY KEY, nome VARCHAR(100), email VARCHAR(200), telefone VARCHAR(20), cliente_id_fraude_counts INT, valor INT);"
             cursor.execute(table_check_query)
             conn.commit()
 
             # Loop através de cada linha no DataFrame
             for index, linha in df.iterrows():
-                # Inserindo uma linha na tabela
-                cursor.execute("INSERT INTO clients_fraud ([cliente_id], [nome], [email], [telefone], [cliente_id_fraude_counts], [valor]) VALUES (?, ?, ?, ?, ?, ?);", linha[0], linha[1], linha[2], linha[3], linha[4], linha[5])
-            conn.commit()
+                # Verifica se o registro já existe
+                check_query = "SELECT COUNT(*) FROM clients_fraud WHERE cliente_id = ?;"
+                cursor.execute(check_query, linha[0])
+                result = cursor.fetchone()[0]
+                if result == 0:  # Se não existe, insere na tabela
+                    # Inserindo uma linha na tabela
+                    cursor.execute("INSERT INTO clients_fraud ([cliente_id], [nome], [email], [telefone], [cliente_id_fraude_counts], [valor]) VALUES (?, ?, ?, ?, ?, ?);", linha[0], linha[1], linha[2], linha[3], linha[4], linha[5])
+                    conn.commit()
+                    print(f"Registro com cliente_id={linha[0]} inserido com sucesso.")
+                else:
+                    print(f"Registro com cliente_id={linha[0]} já existe na tabela clients_fraud. Não foi inserido novamente.")
             print("Tabela clients_fraud criada com sucesso!")
 
         except Exception as e:
@@ -54,9 +60,18 @@ class ConnectionDB:
 
             # Loop através de cada linha no DataFrame
             for index, linha in df.iterrows():
+                # Verifica se o registro já existe
+                check_query = "SELECT COUNT(*) FROM clients WHERE id = ?;"
+                cursor.execute(check_query, linha[0])
+                result = cursor.fetchone()[0]
+                if result == 0:  # Se não existe, insere na tabela
                 # Inserindo uma linha na tabela
-                cursor.execute("INSERT INTO clients ([id], [nome], [email], [data_cadastro], [telefone]) VALUES (?, ?, ?, CONVERT(DATETIMEOFFSET, ?, 127), ?);", linha[0], linha[1], linha[2], linha[3], linha[4])
-            conn.commit()
+                    cursor.execute("INSERT INTO clients ([id], [nome], [email], [data_cadastro], [telefone]) VALUES (?, ?, ?, CONVERT(DATETIMEOFFSET, ?, 127), ?);", linha[0], linha[1], linha[2], linha[3], linha[4])
+                    conn.commit()
+                    print(f"Registro com id={linha[0]} inserido com sucesso.")
+                else:
+                    print(f"Registro com id={linha[0]} já existe na tabela clients. Não foi inserido novamente.")
+            
             print("Tabela clients criada com sucesso!")
 
         except Exception as e:
@@ -74,9 +89,17 @@ class ConnectionDB:
             conn.commit()
             # Loop através de cada linha no DataFrame
             for index, linha in df.iterrows():
+                # Verifica se o registro já existe
+                check_query = "SELECT COUNT(*) FROM transactions WHERE id = ?;"
+                cursor.execute(check_query, linha[0])
+                result = cursor.fetchone()[0]
+                if result == 0:  # Se não existe, insere na tabela
                 # Inserindo uma linha na tabela
-                cursor.execute("INSERT INTO transactions ([id], [cliente_id], [valor], [data]) VALUES (?, ?, ?, CONVERT(DATETIMEOFFSET, ?, 127));", linha[0], linha[1], linha[2], linha[3])
-            conn.commit()
+                    cursor.execute("INSERT INTO transactions ([id], [cliente_id], [valor], [data]) VALUES (?, ?, ?, CONVERT(DATETIMEOFFSET, ?, 127));", linha[0], linha[1], linha[2], linha[3])
+                    conn.commit()
+                    print(f"Registro com id={linha[0]} inserido com sucesso.")
+                else:
+                    print(f"Registro com id={linha[0]} já existe na tabela transactions. Não foi inserido novamente.")
             print("Tabela transactions criada com sucesso!")
 
         except Exception as e:
@@ -94,9 +117,18 @@ class ConnectionDB:
             conn.commit()
             # Loop através de cada linha no DataFrame
             for index, linha in df.iterrows():
-                # Inserindo uma linha na tabela
-                cursor.execute("INSERT INTO transaction_fraud ([id], [cliente_id], [valor], [data], [intervalo]) VALUES (?, ?, ?, CONVERT(DATETIMEOFFSET, ?, 127), ?);", linha[0], linha[1], linha[2], linha[3], linha[4])
-            conn.commit()
+                # Verifica se o registro já existe
+                check_query = "SELECT COUNT(*) FROM transaction_fraud WHERE id = ?;"
+                cursor.execute(check_query, linha[0])
+                result = cursor.fetchone()[0]
+                if result == 0:  # Se não existe, insere na tabela
+                    # Inserindo uma linha na tabela
+                    cursor.execute("INSERT INTO transaction_fraud ([id], [cliente_id], [valor], [data], [intervalo]) VALUES (?, ?, ?, CONVERT(DATETIMEOFFSET, ?, 127), ?);", linha[0], linha[1], linha[2], linha[3], linha[4])
+                    conn.commit()
+                    print(f"Registro com id={linha[0]} inserido com sucesso.")
+                else:
+                    print(f"Registro com id={linha[0]} já existe na tabela transaction_fraud. Não foi inserido novamente.")
+
             print("Tabela transaction_fraud criada com sucesso!")
 
         except Exception as e:

@@ -20,7 +20,10 @@ class Intercept():
             is_fraud = time_diff < pd.Timedelta(minutes=2)
             # Adicionando as transações fraudulentas ao dataframe de fraudes
             frauds = group[is_fraud]
-            fraud_df = pd.concat([fraud_df, frauds])  
+            fraud_df = pd.concat([fraud_df, frauds])
+        print(fraud_df)
+        print("Salvando transaction_fraud no csv...")
+        fraud_df.to_csv('./reports/transaction_fraud.csv', index=False)
         return fraud_df
 
     def Client(clients, fraudes):
@@ -30,6 +33,8 @@ class Intercept():
         df['cliente_id_fraude_counts'] = df['cliente_id'].map(cliente_id_fraude_counts).fillna(0).astype(int)
         # Agrupa as transações por cliente e soma os valores
         df = df.groupby(['cliente_id','nome', 'email', 'telefone', 'cliente_id_fraude_counts'])['valor'].sum().reset_index()
-        df.to_csv('./reports/clients.csv', header=False, index=False)
+        print(df)
+        print("Salvando clients_fraud no csv...")
+        df.to_csv('./reports/clients_fraud.csv', header=False, index=False)
         return df
     
