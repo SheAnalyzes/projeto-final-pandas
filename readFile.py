@@ -22,7 +22,7 @@ class ReadFile():
         return df
 
 
-    def Transaction():
+    def Transactions():
         diretorio = 'arquivos_carga_csv'
 
         ## Lendo as transações de entrada
