@@ -1,62 +1,51 @@
 # Lendo um arquivo csv
 import pandas as pd
+import glob
 import os
   
-# df = pd.read_csv('arquivos_carga_csv/clients-001.csv', header=None)
-# print(df)
 class ReadFile(): 
 
     def Clients():
         diretorio = 'arquivos_carga_csv'  # caminho para o diretório onde estão os arquivos CSV
-        lista_de_dfs_clientes = []
-        for arquivo in os.listdir(diretorio):
-            if arquivo.startswith('clients-') and arquivo.endswith('.csv'):  # verifica se o arquivo é um CSV e tem o prefixo correto
-                caminho = os.path.join(diretorio, arquivo)  # constrói o caminho completo para o arquivo
-                df = pd.read_csv(caminho, names=["id", "nome", "email", "data_cadastro", "telefone"], delimiter=';', header=None)
-                if df.loc()[0]['nome'] == 'nome' and df.loc()[0]['email'] == 'email' and df.loc()[0]['data_cadastro'] == 'data_cadastro' and df.loc()[0]['telefone'] == 'telefone' :
-                    # print(df.loc()[0]['nome'])
-                    continue
-                else:
-                    lista_de_dfs_clientes.append(df)  # adiciona o DataFrame à lista
-        try:
-            df_final = pd.concat(lista_de_dfs_clientes, ignore_index=True)  # combina todos os DataFrames em um único DataFrame
-            return df_final
-        except ValueError:
-            print('Nenhum arquivo CSV encontrado ou todos os arquivos estão vazios')
+        all_files = glob.glob(os.path.join(diretorio, "clients*.csv"))
+        # ler o primeiro arquivo CSV com cabeçalho
+        df = pd.read_csv(all_files[0], names=["id", "nome", "email", "data_cadastro", "telefone"], delimiter=';', header=0)
+        # iterar sobre os arquivos restantes e concatená-los ao dataframe
+        for f in all_files[1:]:
+            temp_df = pd.read_csv(f, names=["id", "nome", "email", "data_cadastro", "telefone"], delimiter=';', header=None)
+            df = pd.concat([df, temp_df])
+        
+        # salvar o dataframe combinado em um arquivo CSV
+        df.to_csv('./reports/clients.csv', index=False)
+        return df
 
 
     def TransactionIn():
-        diretorio = 'arquivos_carga_csv'  # caminho para o diretório onde estão os arquivos CSV
-        lista_de_dfs_clientes = []
-        for arquivo in os.listdir(diretorio):
-            if arquivo.startswith('transaction-in-') and arquivo.endswith('.csv'):  # verifica se o arquivo é um CSV e tem o prefixo correto
-                caminho = os.path.join(diretorio, arquivo)  # constrói o caminho completo para o arquivo
-                df = pd.read_csv(caminho, names=["id", "cliente_id", "valor", "data"], delimiter=';', header=None)
-                if df.loc()[0]['cliente_id'] == 'cliente_id' and df.loc()[0]['valor'] == 'valor' and df.loc()[0]['data'] == 'data':
-                    continue
-                else:
-                    lista_de_dfs_clientes.append(df)  # adiciona o DataFrame à lista
-        try:
-            df_final = pd.concat(lista_de_dfs_clientes, ignore_index=True)  # combina todos os DataFrames em um único DataFrame
-            # print(df_final)
-            return df_final
-        except ValueError:
-            print('Nenhum arquivo CSV encontrado ou todos os arquivos estão vazios')
+        diretorio = './arquivos_carga_csv'  # caminho para o diretório onde estão os arquivos CSV
+        all_files = glob.glob(os.path.join(diretorio, "transaction-in*.csv"))
+        # ler o primeiro arquivo CSV com cabeçalho
+        df = pd.read_csv(all_files[0], names=["id", "cliente_id", "valor", "data"], delimiter=';', header=0)
+        # iterar sobre os arquivos restantes e concatená-los ao dataframe
+        print(df)
+        for f in all_files[1:]:
+            temp_df = pd.read_csv(f, names=["id", "cliente_id", "valor", "data"], delimiter=';', header=None)
+            df = pd.concat([df, temp_df])
+        
+        # salvar o dataframe combinado em um arquivo CSV
+        df.to_csv('./reports/transaction_in.csv', index=False)
+        return df
      
 
     def TransactionOut():
         diretorio = 'arquivos_carga_csv'  # caminho para o diretório onde estão os arquivos CSV
-        lista_de_dfs_clientes = []
-        for arquivo in os.listdir(diretorio):
-            if arquivo.startswith('transaction-out-') and arquivo.endswith('.csv'):  # verifica se o arquivo é um CSV e tem o prefixo correto
-                caminho = os.path.join(diretorio, arquivo)  # constrói o caminho completo para o arquivo
-                df = pd.read_csv(caminho, names=["id", "cliente_id", "valor", "data"], delimiter=';', header=None)
-                if df.loc()[0]['cliente_id'] == 'cliente_id' and df.loc()[0]['valor'] == 'valor' and df.loc()[0]['data'] == 'data':
-                    continue
-                else:
-                    lista_de_dfs_clientes.append(df)  # adiciona o DataFrame à lista
-        try:
-            df_final = pd.concat(lista_de_dfs_clientes, ignore_index=True)  # combina todos os DataFrames em um único DataFrame
-            return df_final
-        except ValueError:
-            print('Nenhum arquivo CSV encontrado ou todos os arquivos estão vazios')
+        all_files = glob.glob(os.path.join(diretorio, "transaction-out*.csv"))
+        # ler o primeiro arquivo CSV com cabeçalho
+        df = pd.read_csv(all_files[0], names=["id", "cliente_id", "valor", "data"], delimiter=';', header=0)
+        # iterar sobre os arquivos restantes e concatená-los ao dataframe
+        for f in all_files[1:]:
+            temp_df = pd.read_csv(f, names=["id", "cliente_id", "valor", "data"], delimiter=';', header=None)
+            df = pd.concat([df, temp_df])
+        
+        # salvar o dataframe combinado em um arquivo CSV
+        df.to_csv('./reports/transaction_out.csv', index=False)
+        return df

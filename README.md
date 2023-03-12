@@ -31,3 +31,13 @@
 </ol>
 
 #### Salvar os dados no banco de dados
+
+### Passo a passo para rodar o projeto
+
+<ol>
+    <li>Faça um clone do repositorio na sua maquina</li>
+    <li>Instale a venv na pasta do projeto: python -m venv venv  e ative com o comando: venv\Scripts\activate </li>
+    <li>Instale as bibliotecas do requirements.txt. Principalmente o pandas e o podbc</li>
+    <li>Coloque as configurações do seu banco de Dados na pasta connectionDB</li>
+    <li>Na pasta do projeto rode o comando: python main.py pra iniciar o projeto.<li>
+</ol>
