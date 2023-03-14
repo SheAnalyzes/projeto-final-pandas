@@ -76,6 +76,8 @@ class ConnectionDB:
 
         except Exception as e:
             print(f"Erro para criar a tabela clients ou inserir dados: {e}")
+        finally:
+            self.closeConnection()
 
 
     def transactions(self):
@@ -104,6 +106,10 @@ class ConnectionDB:
 
         except Exception as e:
             print(f"Erro para criar a tabela transactions ou inserir dados: {e}")
+
+        finally:
+            self.closeConnection()
+
 
 
     def transaction_fraud(self):
@@ -134,6 +140,40 @@ class ConnectionDB:
         except Exception as e:
             print(f"Erro para criar a tabela transaction_fraud ou inserir dados: {e}")
 
+        finally:
+            self.closeConnection()
+
+
+
+    def transactionsDB(self):
+        conn, cursor = self.connectToDatabase()
+        try: 
+            df = pd.read_csv("./reports/transactions_db.csv")
+
+            # Verifica se a tabela já existe                                                    
+            table_check_query = "IF OBJECT_ID('dbo.transacoes', 'U') IS NULL CREATE TABLE transacoes (id INT PRIMARY KEY, cliente_id INT, valor INT, data DATETIMEOFFSET, tipo VARCHAR(45), fraude INT);"
+            cursor.execute(table_check_query)
+            conn.commit()
+            # Loop através de cada linha no DataFrame
+            for index, linha in df.iterrows():
+                # Verifica se o registro já existe
+                check_query = "SELECT COUNT(*) FROM transacoes WHERE id = ?;"
+                cursor.execute(check_query, linha[0])
+                result = cursor.fetchone()[0]
+                if result == 0:  # Se não existe, insere na tabela
+                # Inserindo uma linha na tabela
+                    cursor.execute("INSERT INTO transacoes ([id], [cliente_id], [valor], [data], [tipo], [fraude]) VALUES (?, ?, ?, CONVERT(DATETIMEOFFSET, ?, 127), ?, ?);", linha[0], linha[1], linha[2], linha[3], linha[4], linha[5])
+                    conn.commit()
+                    print(f"Registro com id={linha[0]} inserido com sucesso.")
+                else:
+                    print(f"Registro com id={linha[0]} já existe na tabela transacoes. Não foi inserido novamente.")
+            print("Tabela transacoes criada com sucesso!")
+
+        except Exception as e:
+            print(f"Erro para criar a tabela transacoes ou inserir dados: {e}")
+
+        finally:
+            self.closeConnection()
 
 
     # def transaction_in_fraud(self):
