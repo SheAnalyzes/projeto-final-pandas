@@ -1,3 +1,9 @@
+### Modelagem dos dados enviados ao Banco SQL
+![image](https://user-images.githubusercontent.com/70452464/225103494-92ddadba-afca-4012-a3bd-5a616a1f30d1.png)
+
+### Fluxograma dos csvs manipulados com pandas
+![image](https://user-images.githubusercontent.com/70452464/225104278-53620e29-1e7b-486a-870a-6ded04cb18e4.png)
+
 
 ### Passo a passo para rodar o projeto
 
@@ -11,7 +17,7 @@
 </ol>
 
 ### Passo a passo da criação do projeto
-#### Criando um ambiente virtual no windows:
+#### 1) Criando um ambiente virtual no windows:
 
 <ol>
   <li>Na pasta do projeto, digite no terminal: python -m venv venv</li>
@@ -19,7 +25,7 @@
   <li>Verificando se está com a ultima versão do pip: python -m pip install --upgrade pip</li>
 </ol>
 
-#### Instalando as bibliotecas
+#### 2) Instalando as bibliotecas
 
 <ol>
     <li>Instalação do Pandas: pip install pandas</li>
@@ -27,11 +33,11 @@
     <li>Salvando as versoes usadas: pip freeze > requirements.txt</li>
 </ol>
 
-#### Criação das funções que fazem a leitura do csv
+#### 3) Criação das funções que fazem a leitura do csv
 
-#### Criar a lógica para gerar o relatório de fraude
+#### 4) Criar a lógica para gerar o relatório de fraude
 
-#### Fazer a conexão com banco
+#### 5) Fazer a conexão com banco
 
 <ol>
     <li>pip install pyodbc</li>
@@ -39,4 +45,4 @@
     <li>Configurar a conexão com senha e login</li>
 </ol>
 
-##### Criar a lógica para inserir os dados no banco 
+#### 6) Criar a lógica para inserir os dados no banco 
