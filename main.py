@@ -3,9 +3,10 @@ from intercept import Intercept
 from connectionDB import ConnectionDB
 import time
 
+
 while True:
     print("Digite uma das opções abaixo: ")
-    print("1 - Juntando os arquivos de carga")
+    print("1 - Juntar os arquivos de carga")
     print("2 - Interceptar operações fraudulentas com pandas")
     print("3 - Salvar dados dos clientes no banco")
     print("4 - Salvar dados das transações no banco")
@@ -24,15 +25,28 @@ while True:
         transaction_df = ReadFile.Transactions()
         print("-"*100)
         time.sleep(2)
+        print("-"*100)
+        print("Dataframe das transações de entrada")
+        transaction_in_df = ReadFile.TransactionIn()
+        print("-"*100)
+        time.sleep(2)
+        print("Dataframe das transações de saída")
+        transaction_out_df = ReadFile.TransactionOut()
+        print("-"*100)
+        time.sleep(2)
 
     if option == 2:
         print("-"*100)
         print("Interceptando todas as transações fraudulentas")
-        Intercept.Transactions()
+        Intercept.TransactionsFraud()
         print("-"*100)
         time.sleep(2)
         print("Encontrando os clientes envolvidos")
         Intercept.Client()
+        print("-"*100)
+        time.sleep(2)
+        print("Encontrando todas as transações com flag de fraude e tipo de transação")
+        Intercept.TransactionsDB()
         print("-"*100)
         time.sleep(2)
 
@@ -58,7 +72,7 @@ while True:
         print("-"*100)
         conexao = ConnectionDB()
         print("Salvando todas as transações...")
-        conexao.transactions()
+        conexao.transactionsDB()
         print("-"*100)
         time.sleep(2)
         print("Salvando as transações com fraude...")
