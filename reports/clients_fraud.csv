@@ -1,31 +1,33 @@
 cliente_id,nome,email,telefone,cliente_id_fraude_counts,valor
 44,Romulo,romulo_44@gmail.com,+55(23)2020-2924,9,-13.0
-73,Roberto tenorio,roberto-tenorio_73@gmail.com,+55(22)2727-2422,238,-407.03909999999996
-74,Samara Lais Da Silva Santos,samara-lais-da-silva-santos_74@gmail.com,+55(24)2129-2429,203,-867.322
+73,Roberto tenorio,roberto-tenorio_73@gmail.com,+55(22)2727-2422,243,-240.7131
+74,Samara Lais Da Silva Santos,samara-lais-da-silva-santos_74@gmail.com,+55(24)2129-2429,206,-901.328
 76,Danilo,danilo_76@gmail.com,+55(21)2229-2525,8,800.0
-205,Roberto Teles Tenório,roberto-teles-tenorio_205@gmail.com,+55(26)2424-2122,167,-213.4716
-211,Alan severino mendes de souza,alan-severino-mendes-de-souza_211@gmail.com,+55(25)2323-2822,10,-26.0
-335,Marcelo,marcelo_335@gmail.com,+55(24)2424-2020,11,-129.0
-449,André Victor flor de melo,andre-victor-flor-de-melo_449@gmail.com,+55(30)2220-2522,3,-6.0
-495,Fagner de almeida oliveira,fagner-de-almeida-oliveira_495@gmail.com,+55(20)2521-3022,1,-1.0
-523,Moab Fireman,moab-fireman_523@gmail.com,+55(29)2124-3025,88,-144.998
+205,Roberto Teles Tenório,roberto-teles-tenorio_205@gmail.com,+55(26)2424-2122,173,-279.47159999999997
+211,Alan severino mendes de souza,alan-severino-mendes-de-souza_211@gmail.com,+55(25)2323-2822,11,-31.0
+335,Marcelo,marcelo_335@gmail.com,+55(24)2424-2020,13,-269.0
+389,Erico Buarque,erico-buarque_389@gmail.com,+55(21)2930-3022,1,-5.0
+449,André Victor flor de melo,andre-victor-flor-de-melo_449@gmail.com,+55(30)2220-2522,4,0.6299999999999999
+495,Fagner de almeida oliveira,fagner-de-almeida-oliveira_495@gmail.com,+55(20)2521-3022,2,1.499
+523,Moab Fireman,moab-fireman_523@gmail.com,+55(29)2124-3025,91,-148.998
 529,Geliane fireman honorio,geliane-fireman-honorio_529@gmail.com,+55(30)2122-2925,6,-6.0
 530,Jalison Eulino Da Silva,jalison-eulino-da-silva_530@gmail.com,+55(22)2721-2727,1,-5.0
-533,Sergio Vicente felipe,sergio-vicente-felipe_533@gmail.com,+55(25)2124-2527,138,-50.496500000000005
-534,Thay,thay_534@gmail.com,+55(29)2327-2626,8,-11.0
+533,Sergio Vicente felipe,sergio-vicente-felipe_533@gmail.com,+55(25)2124-2527,141,-51.4965
+534,Thay,thay_534@gmail.com,+55(29)2327-2626,9,-12.0
 570,Ednelson ramalho amorim,ednelson-ramalho-amorim_570@gmail.com,+55(30)2921-2026,2,-3.0
-586,Armando Teles da Silva,armando-teles-da-silva_586@gmail.com,+55(27)2720-2230,20,-48.6
+586,Armando Teles da Silva,armando-teles-da-silva_586@gmail.com,+55(27)2720-2230,21,-46.56
 643,Djalma Macena da Silva,djalma-macena-da-silva_643@gmail.com,+55(29)2726-2925,1,-2.0
 651,Júlio,julio_651@gmail.com,+55(23)2826-2923,1,-2.0
-660,Sandra Paula dos Santos silva,sandra-paula-dos-santos-silva_660@gmail.com,+55(22)2029-2124,6,-25.0
-671,Leonardo,leonardo_671@gmail.com,+55(29)2328-2922,163,-2544.0
-689,Jhon,jhon_689@gmail.com,+55(25)2527-2425,41,-113.0
-690,ERINALDO,erinaldo_690@gmail.com,+55(27)2725-2226,134,-1100.0
+660,Sandra Paula dos Santos silva,sandra-paula-dos-santos-silva_660@gmail.com,+55(22)2029-2124,7,-5.0
+671,Leonardo,leonardo_671@gmail.com,+55(29)2328-2922,184,-650.0
+689,Jhon,jhon_689@gmail.com,+55(25)2527-2425,42,-111.0
+690,ERINALDO,erinaldo_690@gmail.com,+55(27)2725-2226,153,-891.9
+694,Lucas,lucas_694@gmail.com,+55(20)2124-3021,1,50.0
 695,Adelto Paulo Da silva,adelto-paulo-da-silva_695@gmail.com,+55(22)2721-2321,6,-20.0
-702,Aurijean Ferreira Barros,aurijean-ferreira-barros_702@gmail.com,+55(23)2730-2729,7,-14.0
-715,Zekinha,zekinha_715@gmail.com,+55(21)2124-2026,26,-58.0
-730,Wesley,wesley_730@gmail.com,+55(30)2320-2621,22,20.0
-732,Luik,luik_732@gmail.com,+55(22)2829-2621,357,-1189.721
-737,Dalmir,dalmir_737@gmail.com,+55(25)2525-2628,68,-61.05
-741,WILKE DOS SANTOS CALIXTO,wilke-dos-santos-calixto_741@gmail.com,+55(29)2026-2929,15,-30.0
+702,Aurijean Ferreira Barros,aurijean-ferreira-barros_702@gmail.com,+55(23)2730-2729,8,-16.0
+715,Zekinha,zekinha_715@gmail.com,+55(21)2124-2026,27,-60.0
+730,Wesley,wesley_730@gmail.com,+55(30)2320-2621,90,109.0
+732,Luik,luik_732@gmail.com,+55(22)2829-2621,364,-1116.7562
+737,Dalmir,dalmir_737@gmail.com,+55(25)2525-2628,68,-56.05
+741,WILKE DOS SANTOS CALIXTO,wilke-dos-santos-calixto_741@gmail.com,+55(29)2026-2929,16,-20.0
 907,Azus,azus_907@gmail.com,+55(29)2628-2026,4,40.0
