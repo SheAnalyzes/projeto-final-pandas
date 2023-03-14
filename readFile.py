@@ -5,8 +5,8 @@ import os
   
 class ReadFile(): 
 
-    def Clients():
-        diretorio = 'arquivos_carga_csv'
+    def clients():
+        diretorio = './arquivos_carga_csv'
         all_files = glob.glob(os.path.join(diretorio, "clients*.csv"))
         # ler o primeiro arquivo CSV com cabeçalho
         df = pd.read_csv(all_files[0], names=["id", "nome", "email", "data_cadastro", "telefone"], delimiter=';', header=0)
@@ -17,13 +17,13 @@ class ReadFile():
 
         df['data_cadastro'] = pd.to_datetime(df['data_cadastro'])
         print(df)
-        print("Salvando clients no csv...")
+        print("Salvando clients no csv.")
         df.to_csv('./reports/clients.csv', index=False)
         return df
 
 
-    def Transactions():
-        diretorio = 'arquivos_carga_csv'
+    def transactions():
+        diretorio = './arquivos_carga_csv'
 
         ## Lendo as transações de entrada
         all_files_in = glob.glob(os.path.join(diretorio, "transaction-in*.csv"))
@@ -45,29 +45,32 @@ class ReadFile():
         
         df = pd.concat([df_in, df_out])
         print(df)
-        print("Salvando transactions no csv...")
+        print("Salvando transactions no csv.")
         df.to_csv('./reports/transactions.csv', index=False)
         return df
     
 
-    def TransactionIn():
-        diretorio = './arquivos_carga_csv' 
+    def transaction_in():
+        diretorio = './arquivos_carga_csv'
+
         all_files = glob.glob(os.path.join(diretorio, "transaction-in*.csv"))
         # ler o primeiro arquivo CSV com cabeçalho
         df = pd.read_csv(all_files[0], names=["id", "cliente_id", "valor", "data"], delimiter=';', header=0)
         # iterar sobre os arquivos restantes e concatená-los ao dataframe
-        # print(df)
         for f in all_files[1:]:
             temp_df = pd.read_csv(f, names=["id", "cliente_id", "valor", "data"], delimiter=';', header=None)
             df = pd.concat([df, temp_df])
         
-        # salvar o dataframe combinado em um arquivo CSV
+        df['data'] = pd.to_datetime(df['data'])
+        print(df)
+        print("Salvando transaction_in no csv.")
         df.to_csv('./reports/transaction_in.csv', index=False)
         return df
      
 
-    def TransactionOut():
-        diretorio = 'arquivos_carga_csv' 
+    def transaction_out():
+        diretorio = './arquivos_carga_csv'
+
         all_files = glob.glob(os.path.join(diretorio, "transaction-out*.csv"))
         # ler o primeiro arquivo CSV com cabeçalho
         df = pd.read_csv(all_files[0], names=["id", "cliente_id", "valor", "data"], delimiter=';', header=0)
@@ -76,6 +79,8 @@ class ReadFile():
             temp_df = pd.read_csv(f, names=["id", "cliente_id", "valor", "data"], delimiter=';', header=None)
             df = pd.concat([df, temp_df])
         
-        # salvar o dataframe combinado em um arquivo CSV
+        df['data'] = pd.to_datetime(df['data'])
+        print(df)
+        print("Salvando transaction_out no csv.")
         df.to_csv('./reports/transaction_out.csv', index=False)
         return df
