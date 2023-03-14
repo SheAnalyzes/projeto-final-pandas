@@ -4,10 +4,16 @@
 Desenvolver uma aplicação em Python para carga de arquivos em um banco de dados SQL e gerar relatórios estatísticos visando a descoberta de fraudes em conta correntede cartão de crédito.
 Link do desafio: https://docs.google.com/document/d/10fBZm7Sxm60FEIyNk4rqUE-pJLhXRxDi1grAATF7hVw/edit
 
-### Divisão das atividades e Branstorm do problema:
+### Objetivo
 
-https://whimsical.com/projeto-final-5zim4iYZrkWQ2Dbpy2knML
-https://trello.com/b/4JhJb0Iz/project-data-azure-desafio-final
+Seu objetivo inicial é analisar estes arquivos criando uma base de dados relacional para fazer a carga e depois analisá-la. O cartão fraudado, será aquele que tiver movimentações abaixo de 2 minutos de espaçamento entre as transações.
+
+### Divisão das atividades e Brainstorm do problema:
+
+<ul>
+    <li>Brainstorm: https://whimsical.com/projeto-final-5zim4iYZrkWQ2Dbpy2knML</li>
+    <li>Atribuição das atividades: https://trello.com/b/4JhJb0Iz/project-data-azure-desafio-final</li>
+</ul>
 
 ### Modelagem dos dados enviados ao Banco SQL
 ![image](https://user-images.githubusercontent.com/70452464/225104839-128e92fd-3fd5-45ab-a5e3-4a361d39d98c.png)
