@@ -1,9 +1,28 @@
+
+### Apresentação do problema
+
+Desenvolver uma aplicação em Python para carga de arquivos em um banco de dados SQL e gerar relatórios estatísticos visando a descoberta de fraudes em conta correntede cartão de crédito.
+Link do desafio: https://docs.google.com/document/d/10fBZm7Sxm60FEIyNk4rqUE-pJLhXRxDi1grAATF7hVw/edit
+
+### Divisão das atividades e Branstorm do problema:
+
+https://whimsical.com/projeto-final-5zim4iYZrkWQ2Dbpy2knML
+https://trello.com/b/4JhJb0Iz/project-data-azure-desafio-final
+
 ### Modelagem dos dados enviados ao Banco SQL
 ![image](https://user-images.githubusercontent.com/70452464/225104839-128e92fd-3fd5-45ab-a5e3-4a361d39d98c.png)
 
 ### Fluxograma dos csvs manipulados com pandas
 ![image](https://user-images.githubusercontent.com/70452464/225104278-53620e29-1e7b-486a-870a-6ded04cb18e4.png)
 
+### Principais ferramentas utilizadas
+
+<ul>
+    <li>Python</li>
+    <li>Git</li>
+    <li>SQL</li>
+    <li>Trello</li>
+</ul>
 
 ### Passo a passo para rodar o projeto
 
@@ -46,3 +65,5 @@
 </ol>
 
 #### 6) Criar a lógica para inserir os dados no banco 
+
+
