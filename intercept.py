@@ -1,4 +1,5 @@
 import pandas as pd
+from shared.utilities import print_dataframe
 
 class Intercept():
 
@@ -25,13 +26,8 @@ class Intercept():
             is_fraud = time_diff < pd.Timedelta(minutes=2)
             # Adicionando as transações fraudulentas ao dataframe de fraudes
             frauds = group[is_fraud]
-            fraud_df = pd.concat([fraud_df, frauds])
-            
-        print(fraud_df)
-        print("Salvando transaction_fraud no csv...")
-        fraud_df.to_csv('./reports/transaction_fraud.csv', index=False)
-
-        return fraud_df
+            fraud_df = pd.concat([fraud_df, frauds])     
+        print_dataframe(fraud_df, "transaction_fraud")    
     
 
     def client_fraud():
@@ -44,11 +40,8 @@ class Intercept():
         df['cliente_id_fraude_counts'] = df['cliente_id'].map(cliente_id_fraude_counts).fillna(0).astype(int)
         # Agrupa as transações por cliente e soma os valores
         df = df.groupby(['cliente_id','nome', 'email', 'telefone', 'cliente_id_fraude_counts'])['valor'].sum().reset_index()
-        print(df)
-        print("Salvando clients_fraud no csv...")
-        df.to_csv('./reports/clients_fraud.csv', index=False)
-        
-        return df
+        print_dataframe(df, "clients_fraud")    
+
 
     # tabela transações com formato solicitado para armazenamento no Banco de dados
     def transactions_db():
@@ -73,9 +66,4 @@ class Intercept():
             is_fraud = time_diff < pd.Timedelta(minutes=2)
             # Marcando as transações fraudulentas na coluna 'fraude'
             df.loc[group.index[is_fraud], 'fraude'] = 1
-
-        print(df)
-        print("Salvando transaction_db no csv...")
-        df.to_csv('./reports/transactions_db.csv', index=False)
-
-        return df
+        print_dataframe(df, "transactions_db")

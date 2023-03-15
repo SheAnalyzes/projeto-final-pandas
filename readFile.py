@@ -2,7 +2,8 @@
 import pandas as pd
 import glob
 import os
-  
+from shared.utilities import print_dataframe
+
 class ReadFile(): 
 
     def clients():
@@ -16,10 +17,7 @@ class ReadFile():
             df = pd.concat([df, temp_df])
 
         df['data_cadastro'] = pd.to_datetime(df['data_cadastro'])
-        print(df)
-        print("Salvando clients no csv.")
-        df.to_csv('./reports/clients.csv', index=False)
-        return df
+        print_dataframe(df, 'clients' )
 
 
     def transactions():
@@ -44,10 +42,7 @@ class ReadFile():
             df_out = pd.concat([df_out, temp_df_out])
         
         df = pd.concat([df_in, df_out])
-        print(df)
-        print("Salvando transactions no csv.")
-        df.to_csv('./reports/transactions.csv', index=False)
-        return df
+        print_dataframe(df, 'transactions' )
     
 
     def transaction_in():
@@ -62,11 +57,8 @@ class ReadFile():
             df = pd.concat([df, temp_df])
         
         df['data'] = pd.to_datetime(df['data'])
-        print(df)
-        print("Salvando transaction_in no csv.")
-        df.to_csv('./reports/transaction_in.csv', index=False)
-        return df
-     
+        print_dataframe(df, "transaction_in")
+
 
     def transaction_out():
         diretorio = './arquivos_carga_csv'
@@ -80,7 +72,8 @@ class ReadFile():
             df = pd.concat([df, temp_df])
         
         df['data'] = pd.to_datetime(df['data'])
-        print(df)
-        print("Salvando transaction_out no csv.")
-        df.to_csv('./reports/transaction_out.csv', index=False)
-        return df
+        print_dataframe(df, "transaction_out")
+
+
+
+
