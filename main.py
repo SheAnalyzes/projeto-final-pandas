@@ -9,7 +9,7 @@ stage_3 = False
 
 while True:
     print("Digite uma das opções abaixo: ")
-    print("1 - Juntando os arquivos de carga")
+    print("1 - Juntar os arquivos de carga")
     print("2 - Interceptar operações fraudulentas com pandas")
     print("3 - Salvar dados dos clientes no banco")
     print("4 - Salvar dados das transações no banco")
