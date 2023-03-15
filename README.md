@@ -3,10 +3,9 @@
 ### Equipe
 
 <ul>
-    <li>[Emilly Correa Santiago](https://www.linkedin.com/in/emillysantiago23/)</li>
+    <li>[!Emilly Correa Santiago](https://www.linkedin.com/in/emillysantiago23/)</li>
     <li>[Ana Paula Santos de Queiroz](https://github.com/Queirozaps)</li>
 </ul>
-[Link 1](https://github.com/afonsopacifer/my-personal-website/blob/master/dev/assets/styles/molecules/box-default.styl)
 
 ### Apresentação do problema
 
