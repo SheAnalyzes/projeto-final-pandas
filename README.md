@@ -82,7 +82,7 @@ Dentro da pasta do projeto tem o arquivo readFile.py que possue a classe ReadFil
 
 #### 4 - Gerando relatório de fraude
 
-A classe intercept é responsável por encontrar as fraudes entre transações realizadas em menos de 2 minutos. Dentro dessa classe temos métodos que interceptam fraude de clientes e de transações. Essas funções fazem a leitura do csv com todas as transações, ordena elas pelo id do cliente e data e agrupa os clientes. Para cada cliente e verificado o tempo entre as transações com a função diff e sendo menor q 2 minutos é incluida nas fraudes. Nessa função a biblioteca pandas é usada para ler arquivos csv, criar dataframes, concatenar tabelas, converter formatos de datas.
+A classe intercept() é responsável por encontrar as fraudes entre transações realizadas em menos de 2 minutos. Dentro dessa classe temos métodos que interceptam fraude de clientes e de transações. Essas funções fazem a leitura do csv com todas as transações, ordena por id do cliente e data e agrupa os clientes. Para cada cliente e verificado o tempo entre as transações com a função diff e, sendo menor q 2 minutos, é incluida nas fraudes. Nessa função a biblioteca pandas é usada para ler arquivos csv, criar dataframes, converter formatos de datas, concatenar e mergear tabelas.
 
 #### 5 - Criando um servidor na Azure
 ![image](https://user-images.githubusercontent.com/70452464/225177156-8a02b07e-2023-4f33-a770-c008fb54bdec.png)
