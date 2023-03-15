@@ -2,6 +2,11 @@
 ### Grupo 3 
 ### Equipe
 
+<ul>
+    <li>[Emilly Correa Santiago](https://www.linkedin.com/in/emillysantiago23/)</li>
+    <li>[Ana Paula Santos de Queiroz](https://github.com/Queirozaps)</li>
+</ul>
+
 ### Apresentação do problema
 
 Desenvolver uma aplicação em Python para carga de arquivos em um banco de dados SQL e gerar relatórios estatísticos visando a descoberta de fraudes em conta correntede cartão de crédito.
