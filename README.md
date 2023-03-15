@@ -45,6 +45,7 @@ Seu objetivo inicial é analisar estes arquivos criando uma base de dados relaci
     <li>Git</li>
     <li>SQL</li>
     <li>Trello</li>
+    <li>Banco de Dados - Azure</li>
 </ul>
 
 ### Passo a passo para rodar o projeto
