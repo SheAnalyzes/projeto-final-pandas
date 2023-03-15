@@ -1,6 +1,6 @@
 ## Accenture - Gama Academy - Mulheres em Tech - Data Engineer/Azure
+
 ### Grupo 3 
-### Equipe
 
 <ul>
     <li>
