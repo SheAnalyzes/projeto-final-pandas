@@ -2,8 +2,6 @@
 ### Grupo 3 
 ### Equipe
 
-![image](https://user-images.githubusercontent.com/70452464/225170716-5935a0ad-d208-4677-b055-59a95317f585.png "Emilly Correa Santiago")(https://www.linkedin.com/in/emillysantiago23/ "Emilly Correa Santiago")
-
 ### Apresentação do problema
 
 Desenvolver uma aplicação em Python para carga de arquivos em um banco de dados SQL e gerar relatórios estatísticos visando a descoberta de fraudes em conta correntede cartão de crédito.
