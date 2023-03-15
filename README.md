@@ -3,7 +3,11 @@
 ### Equipe
 
 <ul>
-    <li>[!Emilly Correa Santiago](https://www.linkedin.com/in/emillysantiago23/)</li>
+    <li>
+        <a href="https://www.linkedin.com/in/emillysantiago23/">
+            Emilly Correa Santiago
+        </a>
+    </li>
     <li>[Ana Paula Santos de Queiroz](https://github.com/Queirozaps)</li>
 </ul>
 
