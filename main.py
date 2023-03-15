@@ -3,6 +3,10 @@ from intercept import Intercept
 from connectionDB import ConnectionDB
 import time
 
+
+stage_2 = False
+stage_3 = False
+
 while True:
     print("Digite uma das opções abaixo: ")
     print("1 - Juntando os arquivos de carga")
@@ -24,51 +28,68 @@ while True:
         transaction_df = ReadFile.Transactions()
         print("-"*100)
         time.sleep(2)
+        
+        stage_2 = True
 
-    if option == 2:
-        print("-"*100)
-        print("Interceptando todas as transações fraudulentas")
-        Intercept.Transactions()
-        print("-"*100)
-        time.sleep(2)
-        print("Encontrando os clientes envolvidos")
-        Intercept.Client()
-        print("-"*100)
-        time.sleep(2)
+    elif option == 2:
+        
+        if stage_2 == True:
+            print("-"*100)
+            print("Interceptando todas as transações fraudulentas")
+            Intercept.Transactions()
+            print("-"*100)
+            time.sleep(2)
+            print("Encontrando os clientes envolvidos")
+            Intercept.Client()
+            print("-"*100)
+            time.sleep(2)
+            stage_3 = True
+        else:
+            print("Parece que você está tentando interceptar as operações fraudulentas sem ter carregado os CSVs.\n")
 
-    if option == 3:
-        print("-"*100)
-        print("Aguarde... Conectando com o banco de dados. ")
-        print("-"*100)
-        conexao = ConnectionDB()
-        print("Salvando dados dos clientes...")
-        conexao.clients()
-        print("-"*100)
-        time.sleep(2)
-        print("Salvando dados dos clientes fraudulentos...")
-        conexao.clients_fraud()
-        print("Fechando conexão.")
-        conexao.closeConnection()
-        print("-"*100)
-        time.sleep(2)
+    elif option == 3:
+        
+        if stage_3 == True:
+            print("-"*100)
+            print("Aguarde... Conectando com o banco de dados. ")
+            print("-"*100)
+            conexao = ConnectionDB()
+            print("Salvando dados dos clientes...")
+            conexao.clients()
+            print("-"*100)
+            time.sleep(2)
+            print("Salvando dados dos clientes fraudulentos...")
+            conexao.clients_fraud()
+            print("Fechando conexão.")
+            conexao.closeConnection()
+            print("-"*100)
+            time.sleep(2)
+        else:
+            print("Parece que você está tentando interceptar as operações fraudulentas sem ter carregado os CSVs.\n")
 
-    if option == 4:
-        print("-"*100)
-        print("Aguarde... Conectando com o banco de dados. ")
-        print("-"*100)
-        conexao = ConnectionDB()
-        print("Salvando todas as transações...")
-        conexao.transactions()
-        print("-"*100)
-        time.sleep(2)
-        print("Salvando as transações com fraude...")
-        conexao.transaction_fraud()
-        print("Fechando conexão.")
-        conexao.closeConnection()
-        print("-"*100)
-        time.sleep(2)
+    elif option == 4:
+        if stage_3 == True:
+            print("-"*100)
+            print("Aguarde... Conectando com o banco de dados. ")
+            print("-"*100)
+            conexao = ConnectionDB()
+            print("Salvando todas as transações...")
+            conexao.transactions()
+            print("-"*100)
+            time.sleep(2)
+            print("Salvando as transações com fraude...")
+            conexao.transaction_fraud()
+            print("Fechando conexão.")
+            conexao.closeConnection()
+            print("-"*100)
+            time.sleep(2)
+        else:
+            print("Parece que você está tentando conectar ao banco sem ter passado pelas etapas anteriores.\n")
 
-    if option == 5:
+    elif option == 5:
         print("-"*100)
         print("Programa encerrado.")
         exit()
+    
+    else:
+        print('Opção invalida! Por favor, digite um número de 1 a 5.')
