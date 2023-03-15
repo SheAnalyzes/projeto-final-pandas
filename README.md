@@ -8,7 +8,11 @@
             Emilly Correa Santiago
         </a>
     </li>
-    <li>[Ana Paula Santos de Queiroz](https://github.com/Queirozaps)</li>
+    <li>
+        <a href="https://github.com/Queirozaps/">
+            Ana Paula Santos de Queiroz
+        </a>
+    </li>
 </ul>
 
 ### Apresentação do problema
