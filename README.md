@@ -80,6 +80,8 @@ Seu objetivo inicial é analisar estes arquivos criando uma base de dados relaci
 #### 4) Criar a lógica para gerar o relatório de fraude
 
 #### 5) Criando um servidor na Azure
+![image](https://user-images.githubusercontent.com/70452464/225177156-8a02b07e-2023-4f33-a770-c008fb54bdec.png)
+obs:  Lembre de adicionar o firewall do ip da máquina que vai acessar o servidor
 
 #### 6) Fazer a conexão com banco
 
