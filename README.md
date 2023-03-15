@@ -2,7 +2,7 @@
 ### Grupo 3 
 ### Equipe
 
-| [![Emilly Correa Santiago]("Emilly Correa Santiago")](https://www.linkedin.com/in/emillysantiago23/ "Emilly Correa Santiago")
+![image](https://user-images.githubusercontent.com/70452464/225170716-5935a0ad-d208-4677-b055-59a95317f585.png "Emilly Correa Santiago")(https://www.linkedin.com/in/emillysantiago23/ "Emilly Correa Santiago")
 
 ### Apresentação do problema
 
