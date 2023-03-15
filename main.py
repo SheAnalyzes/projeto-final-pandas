@@ -3,6 +3,8 @@ from intercept import Intercept
 from connectionDB import ConnectionDB
 import time
 
+stage_2 = False
+stage_3 = False
 
 while True:
     print("Digite uma das opções abaixo: ")
@@ -33,48 +35,62 @@ while True:
         ReadFile.transactions()
         print("-"*100)
         time.sleep(2)
+        stage_2 = True
 
-    if option == 2:
-        print("-"*100)
-        print("Interceptando todas as transações fraudulentas")
-        Intercept.transactions_fraud()
-        print("-"*100)
-        time.sleep(2)
-        print("Encontrando os clientes envolvidos")
-        Intercept.client_fraud()
-        print("-"*100)
-        time.sleep(2)
-        print("Encontrando todas as transações com flag de fraude e tipo de transação")
-        Intercept.transactions_db()
-        print("-"*100)
-        time.sleep(2)
+    elif option == 2:
+        if stage_2 == True:
+            print("-"*100)
+            print("Interceptando todas as transações fraudulentas")
+            Intercept.transactions_fraud()
+            print("-"*100)
+            time.sleep(2)
+            print("Encontrando os clientes envolvidos")
+            Intercept.client_fraud()
+            print("-"*100)
+            time.sleep(2)
+            print("Encontrando todas as transações com flag de fraude e tipo de transação")
+            Intercept.transactions_db()
+            print("-"*100)
+            time.sleep(2)
+            stage_3 = True
+        else: 
+            print("Parece que você está tentando interceptar as operações fraudulentas sem ter carregado os CSVs.\n")
 
-    if option == 3:
-        print("-"*100)
-        print("Aguarde... Conectando com o banco de dados. ")
-        print("-"*100)
-        conexao = ConnectionDB()
-        print("Criando a tabela clientes no Banco...")
-        conexao.create_clients_table()
-        time.sleep(2)
-        print("Salvando a tabela clientes...")
-        conexao.insert_clients_data()
-        print("-"*100)
-        time.sleep(2)
+    elif option == 3:
+        if stage_3 == True:
+            print("-"*100)
+            print("Aguarde... Conectando com o banco de dados. ")
+            print("-"*100)
+            conexao = ConnectionDB()
+            print("Criando a tabela clientes no Banco...")
+            conexao.create_clients_table()
+            time.sleep(2)
+            print("Salvando a tabela clientes...")
+            conexao.insert_clients_data()
+            print("-"*100)
+            time.sleep(2)
+        else: 
+            print("Parece que você está tentando conectar ao banco sem ter passado pelas etapas anteriores.")
 
-    if option == 4:
-        print("-"*100)
-        print("Aguarde... Conectando com o banco de dados. ")
-        print("-"*100)
-        conexao = ConnectionDB()
-        print("Criando a tabela transacoes...")
-        conexao.create_transactions_table()
-        print("Salvando a tabela transacoes...")
-        conexao.insert_transactions_data()
-        print("-"*100)
-        time.sleep(2)
+    elif option == 4:
+        if stage_3 == True:
+            print("-"*100)
+            print("Aguarde... Conectando com o banco de dados. ")
+            print("-"*100)
+            conexao = ConnectionDB()
+            print("Criando a tabela transacoes...")
+            conexao.create_transactions_table()
+            print("Salvando a tabela transacoes...")
+            conexao.insert_transactions_data()
+            print("-"*100)
+            time.sleep(2)
+        else: 
+            print("Parece que você está tentando conectar ao banco sem ter passado pelas etapas anteriores.")
 
-    if option == 5:
+    elif option == 5:
         print("-"*100)
         print("Programa encerrado.")
         exit()
+
+    else:
+        print('Opção invalida! Por favor, digite um número de 1 a 5.')
