@@ -60,7 +60,7 @@ Seu objetivo inicial é analisar estes arquivos criando uma base de dados relaci
 </ol>
 
 ### Passo a passo da criação do projeto
-#### 1) Criando um ambiente virtual no windows:
+#### 1 - Criando um ambiente virtual no windows:
 
 <ol>
   <li>Na pasta do projeto, digite no terminal: python -m venv venv</li>
@@ -68,7 +68,7 @@ Seu objetivo inicial é analisar estes arquivos criando uma base de dados relaci
   <li>Verificando se está com a ultima versão do pip: python -m pip install --upgrade pip</li>
 </ol>
 
-#### 2) Instalando as bibliotecas
+#### 2 - Instalando as bibliotecas
 
 <ol>
     <li>Instalação do Pandas: pip install pandas</li>
@@ -76,15 +76,19 @@ Seu objetivo inicial é analisar estes arquivos criando uma base de dados relaci
     <li>Salvando as versoes usadas: pip freeze > requirements.txt</li>
 </ol>
 
-#### 3) Criação das funções que fazem a leitura do csv
+#### 3 - Lendo todos os arquivos em csv
 
-#### 4) Criar a lógica para gerar o relatório de fraude
+Dentro da pasta do projeto tem o arquivo readFile.py que possue a classe ReadFile(). Dentro dessa classe temos os métodos que fazem a leitura dos csv usando a biblioteca glob que permite listar arquivos de um diretório. Dessa forma, conseguimos juntar todos os csv com o prefixo clientes, por exemplo, em um só arquivo .csv.
 
-#### 5) Criando um servidor na Azure
+#### 4 - Gerando relatório de fraude
+
+A classe intercept é responsável por encontrar as fraudes entre transações realizadas em menos de 2 minutos. Dentro dessa classe temos métodos que interceptam fraude de clientes e de transações. Essas funções fazem a leitura do csv com todas as transações, ordena elas pelo id do cliente e data e agrupa os clientes. Para cada cliente e verificado o tempo entre as transações com a função diff e sendo menor q 2 minutos é incluida nas fraudes. Nessa função a biblioteca pandas é usada para ler arquivos csv, criar dataframes, concatenar tabelas, converter formatos de datas.
+
+#### 5 - Criando um servidor na Azure
 ![image](https://user-images.githubusercontent.com/70452464/225177156-8a02b07e-2023-4f33-a770-c008fb54bdec.png)
 obs:  Lembre de adicionar o firewall do ip da máquina que vai acessar o servidor
 
-#### 6) Fazer a conexão com banco
+#### 6 - Fazer a conexão com banco
 
 <ol>
     <li>pip install pyodbc</li>
@@ -92,4 +96,6 @@ obs:  Lembre de adicionar o firewall do ip da máquina que vai acessar o servido
     <li>Configurar a conexão com senha e login</li>
 </ol>
 
-#### 7) Criar a lógica para inserir os dados no banco 
+#### 7 - Criar a lógica para inserir os dados no banco 
+
+Dentro da classe connectionDB() temos as funções de conectar com o banco, criar tabelas se não existir, inserir dados se não existir e fechar conexão. Dessa forma buscamos separar as responsabilidades de cada função. Além disso usamos orientação a objeto para encapsular as funções do banco. Também optamos por usar um try except para identificar possíveis problemas. 
