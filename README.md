@@ -1,3 +1,8 @@
+## Accenture - Gama Academy - Mulheres em Tech - Data Engineer/Azure
+### Grupo 3 
+### Equipe
+
+| [![Emilly Correa Santiago](https://lh3.googleusercontent.com/drive-viewer/AJc5JmRPtFX7XgdiuPNBrXFu97_Kf-EVfA5TvnFLN_LDrXJaMjXgF1IAnxp9vLHPj4HOrdQx-XYrzv0=w140-h140 "Emilly Correa Santiago")](https://www.linkedin.com/in/emillysantiago23/ "Emilly Correa Santiago")
 
 ### Apresentação do problema
 
@@ -63,7 +68,9 @@ Seu objetivo inicial é analisar estes arquivos criando uma base de dados relaci
 
 #### 4) Criar a lógica para gerar o relatório de fraude
 
-#### 5) Fazer a conexão com banco
+#### 5) Criando um servidor na Azure
+
+#### 6) Fazer a conexão com banco
 
 <ol>
     <li>pip install pyodbc</li>
@@ -71,6 +78,4 @@ Seu objetivo inicial é analisar estes arquivos criando uma base de dados relaci
     <li>Configurar a conexão com senha e login</li>
 </ol>
 
-#### 6) Criar a lógica para inserir os dados no banco 
-
-
+#### 7) Criar a lógica para inserir os dados no banco 
