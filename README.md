@@ -127,7 +127,7 @@ Dentro da classe connectionDB() temos as funções de conectar com o banco, cria
 
 ### Rodando o projeto
 
-[![Watch the video](https://www.youtube.com/embed/HP8nSDi_OUo)](https://www.youtube.com/embed/HP8nSDi_OUo)
+[![Watch the video](https://img.youtube.com/vi/HP8nSDi_OUo/maxresdefault.jpg)](https://www.youtube.com/embed/HP8nSDi_OUo)
 
 https://www.youtube.com/embed/HP8nSDi_OUo
 
