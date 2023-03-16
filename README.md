@@ -14,7 +14,7 @@ Para retornar ao repositório geral, clique [aqui](https://github.com/SheAnalyze
 - [Tecnologias utilizadas](#tecnologias-utilizadas)
 - [Passo a passo para rodar o projeto](#passo-a-passo-para-rodar-o-projeto)
 - [Passo a passo da criação do projeto](#passo-a-passo-da-criação-do-projeto)
-- [Grupo - SheAnalyses](#grupo---sheanalyses)
+- [Grupo 3 - SheAnalyses](#grupo-3----sheanalyses)
 
 ### Apresentação do problema
 
