@@ -12,6 +12,7 @@ Para retornar ao repositório geral, clique [aqui](https://github.com/SheAnalyze
 - [Modelagem dos dados enviados ao Banco SQL](#modelagem-dos-dados-enviados-ao-banco-sql)
 - [Fluxograma dos csvs manipulados com pandas](#fluxograma-dos-csvs-manipulados-com-pandas)
 - [Tecnologias utilizadas](#tecnologias-utilizadas)
+- [Estrutura do projeto](#estrutura-do-projeto)
 - [Passo a passo para rodar o projeto](#passo-a-passo-para-rodar-o-projeto)
 - [Passo a passo da criação do projeto](#passo-a-passo-da-criação-do-projeto)
 - [Grupo - SheAnalyses](#grupo---sheanalyses)
@@ -48,6 +49,27 @@ Seu objetivo inicial é analisar estes arquivos criando uma base de dados relaci
     <li>Trello</li>
     <li>Banco de Dados - Azure</li>
 </ul>
+
+### Estrutura do projeto
+
+```
+├── main.py
+├── README.md
+├── test
+│   └── connection.test.py
+├── shared
+│   ...
+├── reports
+└── src
+    ├── controllers
+    │   └── intercept.py
+    ├── models
+    │   └── connectionDB.py
+    │── repositories
+    │   └──readFile.py
+
+```
+
 
 ### Passo a passo para rodar o projeto
 
