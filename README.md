@@ -15,6 +15,7 @@ Para retornar ao repositório geral, clique [aqui](https://github.com/SheAnalyze
 - [Estrutura do projeto](#estrutura-do-projeto)
 - [Passo a passo para rodar o projeto](#passo-a-passo-para-rodar-o-projeto)
 - [Passo a passo da criação do projeto](#passo-a-passo-da-criação-do-projeto)
+- [Rodando o projeto](#rodando-o-projeto)
 - [Grupo - SheAnalyses](#grupo---sheanalyses)
 
 ### Apresentação do problema
@@ -124,6 +125,9 @@ obs:  Lembre de adicionar o firewall do ip da máquina que vai acessar o servido
 
 Dentro da classe connectionDB() temos as funções de conectar com o banco, criar tabelas se não existir, inserir dados se não existir e fechar conexão. Dessa forma buscamos separar as responsabilidades de cada função. Além disso usamos orientação a objeto para encapsular as funções do banco. Também optamos por usar um try except para identificar possíveis problemas. 
 
+### Rodando o projeto
+
+<iframe width="560" height="315" src="https://youtu.be/HP8nSDi_OUo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Grupo - SheAnalyses
 
