@@ -1,10 +1,11 @@
 import pandas as pd
-from shared.utilities import print_dataframe
+from shared.utilities import print_dataframe, read_csv_file
+
 
 class Intercept():
 
     def transactions_fraud():
-        df = pd.read_csv("./reports/transactions.csv")
+        df = read_csv_file("./reports/transactions.csv")
 
         df['data'] = pd.to_datetime(df['data'])
         # ordenado por cliente_id e por data
@@ -31,8 +32,8 @@ class Intercept():
     
 
     def client_fraud():
-        clients = pd.read_csv("./reports/clients.csv")
-        transaction_fraud = pd.read_csv("./reports/transaction_fraud.csv")
+        clients = read_csv_file("./reports/clients.csv")
+        transaction_fraud = read_csv_file("./reports/transaction_fraud.csv")
 
         df = pd.merge(clients, transaction_fraud, left_on='id', right_on='cliente_id')
         # Adiciona coluna com número de vezes que o id do cliente aparece em transações fraudulentas
@@ -45,7 +46,7 @@ class Intercept():
 
     # tabela transações com formato solicitado para armazenamento no Banco de dados
     def transactions_db():
-        df = pd.read_csv("./reports/transactions.csv")
+        df = read_csv_file("./reports/transactions.csv")
         # Convertendo a coluna 'data' para o tipo datetime
         df['data'] = pd.to_datetime(df['data'])
         # Ordenando as transações por cliente e por data

@@ -53,7 +53,7 @@ Seu objetivo inicial é analisar estes arquivos criando uma base de dados relaci
 <ol>
     <li>Faça um clone do repositorio na sua maquina</li>
     <li>Instale a venv na pasta do projeto: python -m venv venv  e ative com o comando: venv\Scripts\activate.</li>
-    <li>Instale as bibliotecas do requirements.txt. Principalmente o pandas e o podbc.</li>
+    <li>Instale as bibliotecas do requirements.txt. Principalmente o pandas, podbc.</li>
     <li>Coloque as configurações do seu banco de Dados na pasta connectionDB.</li>
     <li>Na pasta do projeto rode o comando pelo terminal: python main.py para iniciar o projeto.</li>
     <li>Pronto! Pelo terminal, digite alguma das opções apresentadas no menu.</li>
@@ -93,6 +93,7 @@ obs:  Lembre de adicionar o firewall do ip da máquina que vai acessar o servido
 <ol>
     <li>pip install pyodbc</li>
     <li>instalção do drive 18: https://learn.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-server?view=sql-server-ver15</li>
+    <li>Instalação da biblioteca python-dotenv: pip install python-dotenv </li>
     <li>Configurar a conexão com senha e login</li>
 </ol>
 
