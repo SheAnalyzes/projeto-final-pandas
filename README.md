@@ -1,6 +1,22 @@
-## Accenture - Gama Academy - Mulheres em Tech - Data Engineer/Azure
+# Accenture - Gama Academy - Mulheres em Tech - Data Engineer/Azure - Pandas
 
-### Grupo 3
+Este é o repositório da versão do projeto em Pandas.
+
+Para retornar ao repositório geral, clique [aqui](https://github.com/SheAnalyzes/readme-repository)!
+
+## Índice
+
+- [Apresentação do problema](#apresentação-do-problema)
+- [Objetivo](#objetivo)
+- [Estrutura do projeto](#estrutura-do-projeto)
+- [Instalando as bibliotecas](#instalando-as-bibliotecas)
+- [Criação das funções que fazem a leitura do csv](#criação-das-funções-que-fazem-a-leitura-do-csv)
+- [Criação da lógica de identificação das fraudes](#criação-da-lógica-de-identificação-de-fraudes)
+- [Criação dos dataframes com a identificação das fraudes](#criação-dos-dataframes-com-a-identificação-das-fraudes)
+- [Criação conexão com banco de dados](#criação-conexão-com-banco-de-dados)
+- [Salvar os dados no banco de dados](#salvar-os-dados-no-banco-de-dados)
+- [Instalação](#instalação)
+- [Grupo - SheAnalyses](#grupo---sheanalyses)
 
 ### Apresentação do problema
 
