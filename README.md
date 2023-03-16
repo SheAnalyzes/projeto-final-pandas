@@ -36,7 +36,7 @@ Seu objetivo inicial é analisar estes arquivos criando uma base de dados relaci
 </ul>
 
 ### Modelagem dos dados enviados ao Banco SQL
-![image](https://user-images.githubusercontent.com/70452464/225104839-128e92fd-3fd5-45ab-a5e3-4a361d39d98c.png)
+![image](https://user-images.githubusercontent.com/70452464/225645363-62826606-cbab-4796-b060-71ba6960e5ed.png)
 
 ### Fluxograma dos csvs manipulados com pandas
 ![image](https://user-images.githubusercontent.com/70452464/225104278-53620e29-1e7b-486a-870a-6ded04cb18e4.png)
