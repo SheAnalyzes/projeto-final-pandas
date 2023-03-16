@@ -126,9 +126,8 @@ obs:  Lembre de adicionar o firewall do ip da máquina que vai acessar o servido
 Dentro da classe connectionDB() temos as funções de conectar com o banco, criar tabelas se não existir, inserir dados se não existir e fechar conexão. Dessa forma buscamos separar as responsabilidades de cada função. Além disso usamos orientação a objeto para encapsular as funções do banco. Também optamos por usar um try except para identificar possíveis problemas. 
 
 ### Rodando o projeto
-<a href="https://www.youtube.com/watch?v=HP8nSDi_OUo" target="_blank"><img src="https://img.youtube.com/vi/HP8nSDi_OUo.jpg" alt="Nome do vídeo"></a>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/HP8nSDi_OUo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+https://www.youtube.com/embed/HP8nSDi_OUo
 
 ### Grupo - SheAnalyses
 
