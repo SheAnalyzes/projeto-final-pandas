@@ -8,14 +8,12 @@ Para retornar ao repositório geral, clique [aqui](https://github.com/SheAnalyze
 
 - [Apresentação do problema](#apresentação-do-problema)
 - [Objetivo](#objetivo)
-- [Estrutura do projeto](#estrutura-do-projeto)
-- [Instalando as bibliotecas](#instalando-as-bibliotecas)
-- [Criação das funções que fazem a leitura do csv](#criação-das-funções-que-fazem-a-leitura-do-csv)
-- [Criação da lógica de identificação das fraudes](#criação-da-lógica-de-identificação-de-fraudes)
-- [Criação dos dataframes com a identificação das fraudes](#criação-dos-dataframes-com-a-identificação-das-fraudes)
-- [Criação conexão com banco de dados](#criação-conexão-com-banco-de-dados)
-- [Salvar os dados no banco de dados](#salvar-os-dados-no-banco-de-dados)
-- [Instalação](#instalação)
+- [Analisando o problema](#analisando-o-problema)
+- [Modelagem dos dados enviados ao Banco SQL](#modelagem-dos-dados-enviados-ao-banco-sql)
+- [Fluxograma dos csvs manipulados com pandas](#fluxograma-dos-csvs-manipulados-com-pandas)
+- [Tecnologias utilizadas](#tecnologias-utilizadas)
+- [Passo a passo para rodar o projeto](#passo-a-passo-para-rodar-o-projeto)
+- [Passo a passo da criação do projeto](#passo-a-passo-da-criação-do-projeto)
 - [Grupo - SheAnalyses](#grupo---sheanalyses)
 
 ### Apresentação do problema
@@ -28,7 +26,7 @@ Link do desafio: https://docs.google.com/document/d/10fBZm7Sxm60FEIyNk4rqUE-pJLh
 
 Seu objetivo inicial é analisar estes arquivos criando uma base de dados relacional para fazer a carga e depois analisá-la. O cartão fraudado, será aquele que tiver movimentações abaixo de 2 minutos de espaçamento entre as transações.
 
-### Analisando o problema:
+### Analisando o problema
 
 <ul>
     <li>Brainstorm: https://whimsical.com/projeto-final-5zim4iYZrkWQ2Dbpy2knML</li>
@@ -41,7 +39,7 @@ Seu objetivo inicial é analisar estes arquivos criando uma base de dados relaci
 ### Fluxograma dos csvs manipulados com pandas
 ![image](https://user-images.githubusercontent.com/70452464/225104278-53620e29-1e7b-486a-870a-6ded04cb18e4.png)
 
-### Principais ferramentas utilizadas
+### Tecnologias utilizadas
 
 <ul>
     <li>Python</li>
